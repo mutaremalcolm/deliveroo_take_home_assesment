@@ -1,14 +1,16 @@
-import './App.css'
-
-import Header from "../@/Header"
+import "./App.css";
+import Header from "../@/Header";
+import {apiDataFetch} from "../@/lib/apiDataFetch"
 
 function App() {
+  const { menuData, loading, error } = apiDataFetch();
+  console.log("App Component Log:", menuData, loading, error);
+
   return (
     <>
-    <Header />
-      
+      <Header />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
