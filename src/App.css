@@ -1,58 +1,7 @@
-.flex {
-  display: flex;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.items-center {
-  align-items: center;
-}
-
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.md\:mb-0 {
-  margin-bottom: 0 !important; 
-}
-
-
-.gap-2 {
-  gap: 0.5rem; 
-}
-
-
-.hidden {
-  display: none;
-}
-
-
-.transition {
-  transition-property: all;
-  transition-duration: 0.15s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hover\:scale-110:hover {
-  transform: scale(1.1);
-}
-
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0.9rem;
+  padding: 2rem;
   text-align: center;
 }
 
@@ -84,3 +33,10 @@
   }
 }
 
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
