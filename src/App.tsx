@@ -1,6 +1,7 @@
 import './App.css'
 import Header from './components/Header'
-
+import {apiDataFetch} from "../src/lib/apiDataFetch";
+import MenuCard from './components/MenuCard';
 
 function App() {
   const { menuData, loading, error } = apiDataFetch();
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
      <Header /> 
+     <MenuCard />
     </>
   )
 }
