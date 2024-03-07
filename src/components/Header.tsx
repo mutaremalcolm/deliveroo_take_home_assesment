@@ -5,23 +5,21 @@ import { FaSquareGithub, FaLinkedin } from "react-icons/fa6";
 const Header = () => {
   return (
     <>
-      <nav className="flex flex-row justify-between items-center ml-10">
+      <nav className="flex flex-row justify-around items-center ml-2">
         <div>
           <img
             src={Logo}
             alt="logo"
-            height={200}
+            height={100}
             className="mx-auto"
-            width={300}
+            width={200}
           />
-        </div>
-        <div className="flex flex-row justify-center ">
           <a
             target="_blank"
             href="https://www.linkedin.com/in/malcolm-mutare-a234a61aa/"
           >
-            <Button >
-              <FaLinkedin size={50} color="#003366" />
+            <Button>
+              <FaLinkedin size={30} color="#003366" />
             </Button>
           </a>
           <a
@@ -29,7 +27,7 @@ const Header = () => {
             href="https://github.com/mutaremalcolm/flipdish_assesment"
           >
             <Button>
-              <FaSquareGithub size={50} color="#003366" />
+              <FaSquareGithub size={30} color="#003366" />
             </Button>
           </a>
         </div>
@@ -38,9 +36,7 @@ const Header = () => {
         <span className="text-1xl md:text-3xl lg:text-4xl font-semibold">
           FlipDish Assessment
         </span>
-        <h1 className="md:text-4xl lg:text-1xl font-bold mt-2">
-          Today's Menu
-        </h1>
+        <h1 className="md:text-4xl lg:text-1xl font-bold mt-2">Today's Menu</h1>
       </div>
     </>
   );
