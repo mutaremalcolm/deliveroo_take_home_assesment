@@ -70,7 +70,7 @@ type MenuItemOptionSetItem = {
   
   export type MenuSection = {
     MenuSectionId: number;
-    Name: string;
+    Name: string 
     Description: string | null;
     DisplayOrder: number;
     MenuItems: MenuItem[];
@@ -108,4 +108,7 @@ type MenuItemOptionSetItem = {
     MenuSectionBehaviour: number;
     DisplaySectionLinks: boolean;
     ConcessionStores: any[];
+    MenuItems: MenuItem[];
   };
+
+  

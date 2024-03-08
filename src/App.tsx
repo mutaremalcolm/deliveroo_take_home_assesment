@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import { Card, CardContent, CardHeader } from "./components/ui/card";
 import { apiDataFetch } from "../src/lib/apiDataFetch";
 import MenuCard from "./components/MenuCard";
-import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 function App() {
   const { menuData } = apiDataFetch();
@@ -11,7 +10,7 @@ function App() {
   return (
     <>
       <Header />
-      {menuData && menuData.MenuSections.map((section: { MenuSectionId: Key | null | undefined; Name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => {
+      {menuData && menuData.MenuSections.map((section) => {
         const sectionKey = section.MenuSectionId;
         
         let sectionCard;

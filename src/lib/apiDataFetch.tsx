@@ -6,7 +6,7 @@ type ErrorType = {
 };
 
 export function apiDataFetch() {
-  const [menuData, setMenuData] = useState(null);
+  const [menuData, setMenuData] = useState<Menu | null>(null);
   const [loading, setIsLoading] = useState(true);
   const [error, setError] = useState<ErrorType | null>(null);
 
