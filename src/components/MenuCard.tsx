@@ -25,8 +25,8 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
   return (
     <>
       <Card
-        className="flex flex-row w-full max-h-40 min-h-[90px] rounded-lg my-2 transition duration-400
-        hover:scale-95 hover:bg-secondary/80 cursor-pointer  bg-slate-50 hover:bg-slate-100"
+        className="flex flex-row w-full max-h-40 min-h-[90px] rounded-full my-2 transition duration-400
+        hover:scale-95 hover:bg-secondary/80 cursor-pointer  bg-slate-200 hover:bg-slate-100"
       >
         <CardImage>
           {productImageUrl && (
