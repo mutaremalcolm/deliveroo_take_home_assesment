@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { apiDataFetch } from "../lib/apiDataFetch"
 import { renderHook, act } from '@testing-library/react-hooks';
+import '@testing-library/react-hooks';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
