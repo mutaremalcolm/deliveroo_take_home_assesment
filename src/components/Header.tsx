@@ -21,12 +21,12 @@ const Header = () => {
               FlipDish Assessment
             </span>
           </div>
-          <div>
+          <div className="flex justify-between bg-transparent mr-5">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/malcolm-mutare-a234a61aa/"
             >
-              <Button>
+              <Button className="bg-blue-900 mr-2">
                 <FaLinkedin size={30}  />
               </Button>
             </a>
@@ -34,8 +34,8 @@ const Header = () => {
               target="_blank"
               href="https://github.com/mutaremalcolm/flipdish_assesment"
             >
-              <Button>
-                <FaSquareGithub size={30} color="#003366" />
+              <Button className="bg-blue-900">
+                <FaSquareGithub size={30}  />
               </Button>
             </a>
           </div>
