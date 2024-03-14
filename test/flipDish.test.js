@@ -1,6 +1,11 @@
 import { test, expect, render, screen } from "vitest";
 import MenuCard from "../src/components/MenuCard";
 
+
+test("tests the tester 1", () => {
+    expect(1).toBe(1);
+  });
+
 test("MenuCard Component renders with correct details", () => {
   // Arrange
   const props = {
@@ -24,3 +29,4 @@ test("MenuCard Component renders with correct details", () => {
   expect(cardDescription).toBeInTheDocument();
   expect(cardPrice).toBeInTheDocument();
 });
+

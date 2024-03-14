@@ -10,17 +10,15 @@ function App() {
   return (
     <>
       <Header />
-      {menuData && menuData.MenuSections.map((section) => {
-        const sectionKey = section.MenuSectionId;
-        
-        let sectionCard;
-
-        if (section.MenuItems) {
-          sectionCard = (
-            <Card className="rounded-lg my-2 transition duration-400
-             hover:scale-95 hover:bg-secondary/80 cursor-pointer  
-             bg-slate-50 hover:bg-slate-100"
-             key={sectionKey}>
+      {menuData ? (
+        menuData.MenuSections.map((section) => {
+          const sectionKey = section.MenuSectionId;
+          
+          const sectionCard = section.MenuItems ? (
+            <div
+              className="rounded-lg my-2 hover:scale-95 hover:bg-secondary/80 cursor-pointer bg-slate-50 hover:bg-slate-100"
+              key={sectionKey}
+            >
               <CardHeader className="flex gap-1 font-bold md:flex-col">
                 <span className="text-blue-900 text-2xl sm:text-3xl md:text-4xl items-center capitalize tracking-wider pb-2">
                   {section.Name}
@@ -29,7 +27,6 @@ function App() {
               <CardContent className="flex flex-col justify-end">
                 {section.MenuItems.flatMap((product) => {
                   const { Price, PublicId, Name, Description, ImageUrl, MenuItemOptionSets } = product;
-
                   
                   const checkMasterToggle = MenuItemOptionSets.find(
                     (masterItem) => masterItem.IsMasterOptionSet
@@ -62,19 +59,16 @@ function App() {
                   );
                 })}
               </CardContent>
-            </Card>
-          );
-        } else {
-          sectionCard = null; 
-        }
-
-        return sectionCard;
-      })}
-      {!menuData && <div>Loading...</div>}
+            </div>
+          ) : null;
+          
+          return sectionCard;
+        })
+      ) : (
+        <div>Loading...</div>
+      )}
     </>
   );
 }
 
 export default App;
-
-

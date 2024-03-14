@@ -23,35 +23,33 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
   productPrice,
 }) => {
   return (
-    <>
+    <div className="w-full px-2 my-2"> 
       <Card
-        className="flex flex-row w-full max-h-40 min-h-[90px] rounded-full my-2 transition duration-400
-        hover:scale-95 hover:bg-secondary/80 cursor-pointer  bg-slate-200 hover:bg-slate-100"
+        // className="flex flex-row w-full justify-between max-h-36 min-h-[90px] py-4 pb-4 
+        // gap-2 md:gap-3 border-b cursor-pointer transition duration-400 hover:scale-99"
       >
-        <CardImage>
-          {productImageUrl && (
-            <img
-              src={productImageUrl}
-              alt={productName}
-              className="w-full h-full  rounded-lg"
-            />
-          )}
-        </CardImage>
-        <div className="flex float-end place-content-end">
-          <CardHeader className="flex items-center justify-center">
-            <CardTitle className="flex items-center justify-center text-blue-900">
-              {productName}
-            </CardTitle>
-            <CardDescription className="flex items-center justify-center text-blue-900">
+        <CardHeader className="flex items-center">
+          <CardImage className="min-h-40 max-h-60">
+            {productImageUrl && (
+              <img
+                src={productImageUrl}
+                alt={productName}
+                className="w-full h-full rounded-md object-fit-cover"
+              />
+            )}
+          </CardImage>
+          <div className="flex flex-col justify-center p-4">
+            <CardTitle className="text-blue-900">{productName}</CardTitle>
+            <CardDescription className="text-blue-900">
               {productDescription}
             </CardDescription>
-            <CardContent className="flex items-center justify-center text-blue-900">
+            <CardContent className="text-blue-900">
               <p>${productPrice.toFixed(2)}</p>
             </CardContent>
-          </CardHeader>
-        </div>
+          </div>
+        </CardHeader>
       </Card>
-    </>
+    </div>
   );
 };
 
