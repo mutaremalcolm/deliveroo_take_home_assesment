@@ -23,29 +23,30 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
   productPrice,
 }) => {
   return (
-    <div className="w-full px-2 my-2"> 
-      <Card
-        // className="flex flex-row w-full justify-between max-h-36 min-h-[90px] py-4 pb-4 
-        // gap-2 md:gap-3 border-b cursor-pointer transition duration-400 hover:scale-99"
-      >
-        <CardHeader className="flex items-center">
-          <CardImage className="min-h-40 max-h-60">
-            {productImageUrl && (
+    <div className="w-full px-2 my-2">
+      <Card className="flex flex-col h-full rounded-md border-blue-300 transition duration-400 hover:bg-transparent cursor-pointer bg-slate-200 sm:w-80">
+        <CardHeader className="flex items-center h-full">
+          {productImageUrl && (
+            <CardImage className="min-w-0 w-40 h-40 lg:w-52 lg:h-52 md:w-44 md:h-44 sm:w-36 sm:h-36">
               <img
                 src={productImageUrl}
                 alt={productName}
-                className="w-full h-full rounded-md object-fit-cover"
+                className="w-full h-full rounded-md object-cover"
               />
-            )}
-          </CardImage>
-          <div className="flex flex-col justify-center p-4">
-            <CardTitle className="text-blue-900">{productName}</CardTitle>
-            <CardDescription className="text-blue-900">
-              {productDescription}
-            </CardDescription>
-            <CardContent className="text-blue-900">
-              <p>${productPrice.toFixed(2)}</p>
-            </CardContent>
+            </CardImage>
+          )}
+          <div className="flex flex-col flex-grow justify-center p-4">
+            <div>
+              <CardTitle className="text-blue-900">{productName}</CardTitle>
+              <CardDescription className="text-blue-900">
+                {productDescription}
+              </CardDescription>
+            </div>
+            <div className="flex justify-center">
+              <CardContent className="text-blue-900">
+                <p>${productPrice.toFixed(2)}</p>
+              </CardContent>
+            </div>
           </div>
         </CardHeader>
       </Card>
