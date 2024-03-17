@@ -1,4 +1,4 @@
-import { Button } from "../components/ui/button";
+import { Button } from "./ui/button";
 import Logo from "../../src/assets/flipdish_logo.png";
 import { FaSquareGithub, FaLinkedin } from "react-icons/fa6";
 
@@ -6,7 +6,6 @@ const Header = () => {
   return (
     <>
       <nav className="bg-slate-300 rounded-full">
-        {/* Top Row for Logo and Buttons */}
         <div className="flex justify-between items-center mb-8">
           <div className="ml-2">
             <img
@@ -22,21 +21,21 @@ const Header = () => {
               FlipDish Assessment
             </span>
           </div>
-          <div>
+          <div className="flex justify-between bg-transparent mr-5">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/malcolm-mutare-a234a61aa/"
             >
-              <Button>
-                <FaLinkedin size={30} color="#003366" />
+              <Button className="bg-blue-900 mr-2">
+                <FaLinkedin size={30}  />
               </Button>
             </a>
             <a
               target="_blank"
               href="https://github.com/mutaremalcolm/flipdish_assesment"
             >
-              <Button>
-                <FaSquareGithub size={30} color="#003366" />
+              <Button className="bg-blue-900">
+                <FaSquareGithub size={30}  />
               </Button>
             </a>
           </div>
