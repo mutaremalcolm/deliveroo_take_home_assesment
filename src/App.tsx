@@ -15,16 +15,16 @@ function App() {
           const sectionKey = section.MenuSectionId;
           
           const sectionCard = section.MenuItems ? (
-            <Card
-              className="rounded-lg my-2 hover:scale-95 hover:bg-secondary/80 cursor-pointer bg-slate-50 hover:bg-slate-100"
+            <div
+              className="rounded-lg border bg-card text-card-foreground shadow-sm border-none"
               key={sectionKey}
             >
-              <CardHeader className="flex gap-1 font-family: ui-serif font-bold md:flex-col">
-                <span className="text-blue-900 text-2xl sm:text-3xl md:text-4xl items-center capitalize tracking-wider pb-2">
+              <CardHeader className="flex items-start gap-1 font-family:ui-serif font-bold ">
+                <span className="text-blue-900 text-2xl sm:text-3xl md:text-4xl capitalize tracking-wider pb-2">
                   {section.Name}
                 </span>
               </CardHeader>
-              <CardContent className="flex flex-row justify-end">
+              <div className="flex flex-col gap-6">
                 {section.MenuItems.flatMap((product) => {
                   const { Price, PublicId, Name, Description, ImageUrl, MenuItemOptionSets } = product;
                   
@@ -58,8 +58,8 @@ function App() {
                     />
                   );
                 })}
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ) : null;
           
           return sectionCard;
