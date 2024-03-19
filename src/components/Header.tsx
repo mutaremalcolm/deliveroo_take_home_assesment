@@ -5,7 +5,7 @@ import { FaSquareGithub, FaLinkedin } from "react-icons/fa6";
 const Header = () => {
   return (
     <>
-      <nav className="bg-slate-300 rounded-full">
+      <nav className="">
         <div className="flex justify-between items-center mb-8">
           <div className="ml-2">
             <img
@@ -16,7 +16,7 @@ const Header = () => {
               width={200}
             />
           </div>
-          <div className="font-family: ui-monospace text-blue-900">
+          <div className="font-family: ui-monospace">
             <span className="text-sm lg:text-1xl md:text-3xl font-semibold">
               FlipDish Assessment
             </span>
@@ -41,7 +41,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <div className="font-family: ui-monospace text-blue-900 text-center py-10">
+      <div className="font-family: ui-monospace text-center py-0">
         <h1 className="md:text-4xl lg:text-1xl font-bold">Today's Menu</h1>
       </div>
     </>

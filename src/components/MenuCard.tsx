@@ -37,9 +37,9 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
       ) : (
         <div>
           <img
-            src="./vite.svg" //TODO: replace image
+            src="../../src/assets/placeholder-image.svg" //TODO: replace image
             alt="placehodler image"
-            className="w-full h-full rounded-md object-cover"
+            className="min-h-0 min-w-0 rounded-md object-cover"
           />
         </div>
       )}

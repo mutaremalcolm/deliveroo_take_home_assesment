@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
-import { Card, CardContent, CardHeader } from "./components/ui/card";
+import { CardHeader } from "./components/ui/card";
 import { apiDataFetch } from "../src/lib/apiDataFetch";
 import MenuCard from "./components/MenuCard";
 
@@ -13,21 +13,31 @@ function App() {
       {menuData ? (
         menuData.MenuSections.map((section) => {
           const sectionKey = section.MenuSectionId;
-          
+
           const sectionCard = section.MenuItems ? (
             <div
               className="rounded-lg border bg-card text-card-foreground shadow-sm border-none"
               key={sectionKey}
             >
-              <CardHeader className="flex items-start gap-1 font-family:ui-serif font-bold ">
-                <span className="text-blue-900 text-2xl sm:text-3xl md:text-4xl capitalize tracking-wider pb-2">
+              <CardHeader className="flex items-center gap-1 font-bold ">
+                <span
+                  className="text-2xl sm:text-3xl md:text-4xl capitalize 
+                  tracking-wider font-family: Monaco"
+                >
                   {section.Name}
                 </span>
               </CardHeader>
               <div className="flex flex-col gap-6">
                 {section.MenuItems.flatMap((product) => {
-                  const { Price, PublicId, Name, Description, ImageUrl, MenuItemOptionSets } = product;
-                  
+                  const {
+                    Price,
+                    PublicId,
+                    Name,
+                    Description,
+                    ImageUrl,
+                    MenuItemOptionSets,
+                  } = product;
+
                   const checkMasterToggle = MenuItemOptionSets.find(
                     (masterItem) => masterItem.IsMasterOptionSet
                   );
@@ -46,7 +56,7 @@ function App() {
                       )
                     );
                   }
-                  
+
                   return (
                     <MenuCard
                       key={PublicId}
@@ -61,7 +71,7 @@ function App() {
               </div>
             </div>
           ) : null;
-          
+
           return sectionCard;
         })
       ) : (
