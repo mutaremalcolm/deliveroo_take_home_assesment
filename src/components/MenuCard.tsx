@@ -15,7 +15,7 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
 }) => {
   return (
     <div className="flex flex-row justify-between text-start rounded-xl border-2 mx-60">
-      <div className="flex flex-col h-autoh-auto justify-between p-6">
+      <div className="flex flex-col h-auto justify-between p-6">
         <div>
           <h2 className="text-lg font-semibold text-blue-900">{productName}</h2>
           <p className="text-blue-900/60 thin italic">{productDescription}</p>
@@ -37,7 +37,7 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
       ) : (
         <div>
           <img
-            src="../../src/assets/placeholder-image.svg" //TODO: replace image
+            src="../../src/assets/placeholder-image.svg" 
             alt="placehodler image"
             className="min-h-0 min-w-0 rounded-md object-cover"
           />
