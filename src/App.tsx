@@ -16,7 +16,7 @@ function App() {
 
           const sectionCard = section.MenuItems ? (
             <div
-              className="font-kumbh-sans rounded-lg border bg-card text-card-foreground shadow-sm border-none"
+              className="font-kumbh-sans rounded-lg border bg-card text-card-foreground shadow-sm border-none p-4 md:p-8 lg:p-12"
               key={sectionKey}
             >
               <CardHeader className="flex items-center gap-1 font-bold ">
