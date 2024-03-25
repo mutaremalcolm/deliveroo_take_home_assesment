@@ -16,13 +16,13 @@ function App() {
 
           const sectionCard = section.MenuItems ? (
             <div
-              className="rounded-lg border bg-card text-card-foreground shadow-sm border-none"
+              className="font-kumbh-sans rounded-lg border bg-card text-card-foreground shadow-sm border-none"
               key={sectionKey}
             >
               <CardHeader className="flex items-center gap-1 font-bold ">
                 <span
                   className="text-2xl sm:text-3xl md:text-4xl capitalize 
-                  tracking-wider font-family: Monaco"
+                  tracking-wider font-khumb-sans text-blue-900"
                 >
                   {section.Name}
                 </span>
