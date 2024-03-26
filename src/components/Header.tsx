@@ -11,8 +11,8 @@ const Header = () => {
             Flipdish POS is an all-in-one restaurant management system
           </span>
         </div>
-        <div className="flex justify-between items-center px-5 max-w-screen-lg mx-auto">
-          <div className="ml-2">
+        <div className="flex flex-col md:flex-row justify-between items-center px-5 md:px-0 max-w-screen-lg mx-auto">
+          <div className="md:ml-2 md:order-2">
             <img
               src={Logo}
               alt="logo"
@@ -21,7 +21,7 @@ const Header = () => {
               width={200}
             />
           </div>
-          <div className="flex bg-transparent">
+          <div className="flex bg-transparent md:order-1 md:ml-2 md:mr-0 md:mt-0 md:mb-2">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/malcolm-mutare-a234a61aa/"
@@ -42,7 +42,7 @@ const Header = () => {
         </div>
       </nav>
       <div className="text-center py-0">
-        <h1 className="font-sans md:text-4xl lg:text-1xl font-bold text-blue-900">
+        <h1 className="font-sans text-2xl md:text-4xl lg:text-3xl font-bold text-blue-900">
           Today's Menu
         </h1>
       </div>
