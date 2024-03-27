@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
-import { Card, CardContent, CardHeader } from "./components/ui/card";
+import { CardHeader } from "./components/ui/card";
 import { apiDataFetch } from "../src/lib/apiDataFetch";
 import MenuCard from "./components/MenuCard";
 
@@ -13,21 +13,31 @@ function App() {
       {menuData ? (
         menuData.MenuSections.map((section) => {
           const sectionKey = section.MenuSectionId;
-          
+
           const sectionCard = section.MenuItems ? (
-            <Card
-              className="rounded-lg my-2 hover:scale-95 hover:bg-secondary/80 cursor-pointer bg-slate-50 hover:bg-slate-100"
+            <div
+              className="font-kumbh-sans rounded-lg border bg-card text-card-foreground shadow-sm border-none p-4 md:p-8 lg:p-12"
               key={sectionKey}
             >
-              <CardHeader className="flex gap-1 font-family: ui-serif font-bold md:flex-col">
-                <span className="text-blue-900 text-2xl sm:text-3xl md:text-4xl items-center capitalize tracking-wider pb-2">
+              <CardHeader className="flex items-center gap-1 font-bold ">
+                <span
+                  className="text-2xl sm:text-3xl md:text-4xl capitalize 
+                  tracking-wider font-khumb-sans text-blue-900"
+                >
                   {section.Name}
                 </span>
               </CardHeader>
-              <CardContent className="flex flex-row justify-end">
+              <div className="flex flex-col gap-6">
                 {section.MenuItems.flatMap((product) => {
-                  const { Price, PublicId, Name, Description, ImageUrl, MenuItemOptionSets } = product;
-                  
+                  const {
+                    Price,
+                    PublicId,
+                    Name,
+                    Description,
+                    ImageUrl,
+                    MenuItemOptionSets,
+                  } = product;
+
                   const checkMasterToggle = MenuItemOptionSets.find(
                     (masterItem) => masterItem.IsMasterOptionSet
                   );
@@ -46,7 +56,7 @@ function App() {
                       )
                     );
                   }
-                  
+
                   return (
                     <MenuCard
                       key={PublicId}
@@ -58,10 +68,10 @@ function App() {
                     />
                   );
                 })}
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ) : null;
-          
+
           return sectionCard;
         })
       ) : (

@@ -5,9 +5,14 @@ import { FaSquareGithub, FaLinkedin } from "react-icons/fa6";
 const Header = () => {
   return (
     <>
-      <nav className="bg-slate-300 rounded-full">
-        <div className="flex justify-between items-center mb-8">
-          <div className="ml-2">
+      <nav>
+        <div className="bg-blue-900 text-white py-5">
+          <span className="mx-auto max-w-screen-lg block text-center">
+            Flipdish POS is an all-in-one restaurant management system
+          </span>
+        </div>
+        <div className="flex flex-col md:flex-row justify-between items-center px-5 md:px-0 max-w-screen-lg mx-auto">
+          <div className="md:ml-2 md:order-2">
             <img
               src={Logo}
               alt="logo"
@@ -16,18 +21,13 @@ const Header = () => {
               width={200}
             />
           </div>
-          <div className="font-family: ui-monospace text-blue-900">
-            <span className="text-sm lg:text-1xl md:text-3xl font-semibold">
-              FlipDish Assessment
-            </span>
-          </div>
-          <div className="flex justify-between bg-transparent mr-5">
+          <div className="flex bg-transparent md:order-1 md:ml-2 md:mr-0 md:mt-0 md:mb-2">
             <a
               target="_blank"
               href="https://www.linkedin.com/in/malcolm-mutare-a234a61aa/"
             >
               <Button className="bg-blue-900 mr-2">
-                <FaLinkedin size={30}  />
+                <FaLinkedin size={30} />
               </Button>
             </a>
             <a
@@ -35,14 +35,16 @@ const Header = () => {
               href="https://github.com/mutaremalcolm/flipdish_assesment"
             >
               <Button className="bg-blue-900">
-                <FaSquareGithub size={30}  />
+                <FaSquareGithub size={30} />
               </Button>
             </a>
           </div>
         </div>
       </nav>
-      <div className="font-family: ui-monospace text-blue-900 text-center py-10">
-        <h1 className="md:text-4xl lg:text-1xl font-bold">Today's Menu</h1>
+      <div className="text-center py-0">
+        <h1 className="font-sans text-2xl md:text-4xl lg:text-3xl font-bold text-blue-900">
+          Today's Menu
+        </h1>
       </div>
     </>
   );

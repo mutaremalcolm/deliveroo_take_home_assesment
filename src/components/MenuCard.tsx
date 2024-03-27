@@ -1,13 +1,3 @@
-import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  CardImage,
-} from "@/components/ui/card";
-
 interface MenuItemCardProps {
   productKey: string;
   productName: string;
@@ -23,33 +13,35 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
   productPrice,
 }) => {
   return (
-    <div className="w-full px-2 my-2">
-      <Card className="flex flex-col h-full rounded-md border-blue-300 transition duration-400 hover:bg-transparent cursor-pointer bg-slate-200 sm:w-80">
-        <CardHeader className="flex items-center h-full">
-          {productImageUrl && (
-            <CardImage className="min-w-0 w-40 h-40 lg:w-52 lg:h-52 md:w-44 md:h-44 sm:w-36 sm:h-36">
-              <img
-                src={productImageUrl}
-                alt={productName}
-                className="w-full h-full rounded-md object-cover"
-              />
-            </CardImage>
-          )}
-          <div className="flex flex-col flex-grow justify-center p-4">
-            <div>
-              <CardTitle className="text-blue-900">{productName}</CardTitle>
-              <CardDescription className="text-blue-900">
-                {productDescription}
-              </CardDescription>
-            </div>
-            <div className="flex justify-center">
-              <CardContent className="text-blue-900">
-                <p>${productPrice.toFixed(2)}</p>
-              </CardContent>
-            </div>
-          </div>
-        </CardHeader>
-      </Card>
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between rounded-xl border-2 mx-4 sm:mx-0">
+      <div className="flex flex-col justify-between p-4 sm:p-6">
+        <div>
+          <h2 className="text-lg font-semibold text-blue-900">{productName}</h2>
+          <p className="text-blue-900/60 thin italic">{productDescription}</p>
+        </div>
+
+        <div className="font-bold mt-4 sm:mt-0">
+          <span>R {productPrice.toFixed(2)}</span>
+        </div>
+      </div>
+
+      {productImageUrl ? (
+        <div className="w-full sm:w-40 h-40 sm:h-auto sm:ml-4 p-0.5">
+          <img
+            src={productImageUrl}
+            alt={productName}
+            className="w-full h-full rounded-xl object-cover"
+          />
+        </div>
+      ) : (
+        <div className="w-20 h-20 sm:w-36 sm:h-36 p-0.5">
+          <img
+            src="../../src/assets/placeholder-image.svg" 
+            alt="placeholder image"
+            className="w-full h-full rounded-md object-cover"
+          />
+        </div>
+      )}
     </div>
   );
 };
