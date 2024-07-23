@@ -1,3 +1,4 @@
+<div className='items-center'>
 # Flipdish Menu Renderer
 
 [Live Demo](https://flipdish-assesment.vercel.app/)
@@ -27,4 +28,4 @@ The Flipdish menu combines products (MenuSectionItems & MenuOptionSetItems) and 
 - Tailwind CSS
 - React
 - Vitest
-
+</div>
