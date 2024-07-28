@@ -64,6 +64,21 @@ const CardContent = React.forwardRef<
 ))
 CardContent.displayName = "CardContent"
 
+const CardImage = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "flex min-w-[135px] max-w-[350px] w-1/4 overflow-hidden rounded-md rounded-r-none",
+      className
+    )}
+    {...props}
+  />
+));
+CardImage.displayName = "ProductImage";
+
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -76,4 +91,4 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent, CardImage }
