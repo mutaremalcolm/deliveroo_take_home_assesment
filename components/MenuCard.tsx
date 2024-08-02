@@ -1,3 +1,5 @@
+import React from "react";
+
 interface MenuItemCardProps {
   productKey: string;
   productName: string;
@@ -13,32 +15,28 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
   productPrice,
 }) => {
   return (
-    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between rounded-xl border-2 mx-4 sm:mx-0">
-      <div className="flex flex-col justify-between p-4 sm:p-6">
-        <div>
-          <h2 className="text-lg font-semibold text-blue-900">{productName}</h2>
-          <p className="text-blue-900/60 thin italic">{productDescription}</p>
-        </div>
-
-        <div className="font-bold mt-4 sm:mt-0">
+    <div className="flex flex-col rounded-xl border-1 bg-orange-300 h-full">
+      <div className="p-4 flex-grow">
+        <h2 className="text-lg font-semibold text-white">{productName}</h2>
+        <p className="text-black thin">{productDescription}</p>
+        <div className="font-bold mt-4">
           <span>R {productPrice.toFixed(2)}</span>
         </div>
       </div>
-
       {productImageUrl ? (
-        <div className="w-full sm:w-40 h-40 sm:h-auto sm:ml-4 p-0.5">
+        <div className="w-full h-40">
           <img
             src={productImageUrl}
             alt={productName}
-            className="w-full h-full rounded-xl object-cover"
+            className="w-full h-full rounded-b-xl object-cover"
           />
         </div>
       ) : (
-        <div className="w-20 h-20 sm:w-36 sm:h-36 p-0.5">
+        <div className="w-full h-40">
           <img
-            src="../../src/assets/placeholder-image.svg" 
+            src="../../src/assets/placeholder-image.svg"
             alt="placeholder image"
-            className="w-full h-full rounded-md object-cover"
+            className="w-full h-full rounded-b-xl object-cover"
           />
         </div>
       )}
