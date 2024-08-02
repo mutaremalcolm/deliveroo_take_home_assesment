@@ -18,8 +18,8 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
   return (
     <div
       className="flex flex-col rounded-xl border-1 bg-orange-300 h-full 
-      ease-in-out delay-150 hover:-translate-y-1 hover:scale-10 hover:bg-orange-300 
-      duration-300"
+      ease-in-out delay-150 hover:-translate-y-1 hover:scale-15 hover:bg-orange-300 
+      duration-300 relative" 
     >
       <div className="p-4 flex-grow">
         <h2 className="text-lg font-semibold text-white">{productName}</h2>
@@ -35,7 +35,6 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
             alt={productName}
             className="w-full h-full rounded-b-xl object-cover"
           />
-          <FaHeart className="absolute top-2 right-2 text-red-500" size={30}/> 
         </div>
       ) : (
         <div className="w-full h-40">
@@ -46,6 +45,7 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
           />
         </div>
       )}
+      <FaHeart className="absolute top-2 right-2 text-red-500 z-10 pt-2" size={30} /> {/* Moved outside of the main content */}
     </div>
   );
 };
