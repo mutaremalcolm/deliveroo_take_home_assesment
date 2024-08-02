@@ -3,6 +3,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
+import { TfiYoutube } from "react-icons/tfi";
 import { IoBriefcase } from "react-icons/io5";
 import Link from "next/link";
 
@@ -28,6 +29,18 @@ const navigation = [
   {
     id: "3",
     title: <FaSquareInstagram size={30} />,
+    url: "https://www.instagram.com/malcolmfullstack/?igsh=cmdpdTRmdzN3eXh5",
+    mobile: false,
+  },
+  {
+    id: "4",
+    title: <TfiYoutube size={30}/>,
+    url: "https://www.youtube.com/channel/UCMbfKNfObUifGLqvhzUKzWw",
+    mobile: false,
+  },
+  {
+    id: "5",
+    title: "Copyright M Mutare",
     url: "https://www.instagram.com/malcolmfullstack/?igsh=cmdpdTRmdzN3eXh5",
     mobile: false,
   },
