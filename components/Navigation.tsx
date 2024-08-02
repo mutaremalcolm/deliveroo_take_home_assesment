@@ -6,27 +6,30 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { IoBriefcase } from "react-icons/io5";
 import Link from "next/link";
 
-
 const navigation = [
   {
     id: "0",
-    title: <FaTwitter size={30}/>,
+    title: <FaTwitter size={30} />,
     url: "https://x.com/MalcolmTech",
+    mobile: false,
   },
   {
     id: "1",
-    title: <FaGithub size={30}/>,
+    title: <FaGithub size={30} />,
     url: "https://github.com/mutaremalcolm/technical-take-home_assesment",
+    mobile: false,
   },
   {
     id: "2",
-    title: <FaLinkedin size={30}/>,
+    title: <FaLinkedin size={30} />,
     url: "https://www.linkedin.com/in/malcolm-mutare-a234a61aa/",
+    mobile: false,
   },
   {
     id: "3",
-    title: <FaSquareInstagram size={30}/>,
+    title: <FaSquareInstagram size={30} />,
     url: "https://www.instagram.com/malcolmfullstack/?igsh=cmdpdTRmdzN3eXh5",
+    mobile: false,
   },
 ];
 
@@ -51,6 +54,7 @@ const Navigation = () => {
                 left-0 right-0 bottom-0 bg-card lg:static lg:flex lg:mx-auto lg:bg-transparent`}
           >
             <div className="relative z-2 flex flex-col items-center justify-around m-auto lg:flex-row">
+              {/* Add 'hidden lg:flex' to hide items on mobile and show on large screens */}
               {navigation.map((item) => (
                 <Link
                   key={item.id}
@@ -61,7 +65,7 @@ const Navigation = () => {
                                   item.url === location.hash
                                     ? "z-2 lg:text-primary-foreground"
                                     : "lg:text-primary-foreground/50"
-                                } lg:hover:text-primary-foreground xl:px-12`}
+                                } lg:hover:text-primary-foreground xl:px-12 hidden lg:block`}
                 >
                   {item.title}
                 </Link>
@@ -72,7 +76,7 @@ const Navigation = () => {
             href="https://vercel.com/mutaremalcolms-projects/vite-typescript-portfolio"
             className="hidden lg:block button mr-8 text-primary-foreground/50 transition-colors hover:text-primary-foreground"
           >
-            <IoBriefcase size={30}/>
+            <IoBriefcase size={30} />
           </a>
         </div>
       </div>
