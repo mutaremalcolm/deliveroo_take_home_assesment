@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { Menu } from './types';
 
@@ -5,7 +7,7 @@ type ErrorType = {
   message: string | null;
 };
 
-export function apiDataFetch() {
+export function ApiDataFetch() {
   const [menuData, setMenuData] = useState<Menu | null>(null);
   const [loading, setIsLoading] = useState(true);
   const [error, setError] = useState<ErrorType | null>(null);

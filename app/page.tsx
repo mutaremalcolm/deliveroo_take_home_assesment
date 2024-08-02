@@ -1,15 +1,28 @@
-import "./App.css";
-import Header from "./components/Header";
-import { CardHeader } from "./components/ui/card";
-import { apiDataFetch } from "../src/lib/apiDataFetch";
-import MenuCard from "./components/MenuCard";
+// app/page.tsx
+
+"use client";
+
+import "./globals.css";
+import Navigation from "../components/Navigation";
+import { CardHeader } from "../components/ui/card";
+import MenuCard from "../components/MenuCard";
+import { useApiDataFetch } from "../hooks/useApiDataFetch";
+import React from "react";
 
 function App() {
-  const { menuData } = apiDataFetch();
+  const { menuData, loading, error } = useApiDataFetch();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <>
-      <Header />
+      <Navigation />
       {menuData ? (
         menuData.MenuSections.map((section) => {
           const sectionKey = section.MenuSectionId;
