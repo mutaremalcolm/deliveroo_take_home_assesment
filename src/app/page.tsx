@@ -20,10 +20,16 @@ function App() {
   return (
     <>
       <Navigation />
+      <div className="flex flex-col items-center mt-10 text-white font-bold text-lg" >
+        {/* <h1>TODAY'S MENU</h1> */}
+      </div>
       <div className="p-4 mt-5">
         {menuData
           ? menuData.MenuSections.map((section) => (
-              <div key={section.MenuSectionId} className="mb-8 text-center text-white">
+              <div
+                key={section.MenuSectionId}
+                className="mb-8 text-center text-white"
+              >
                 <h2 className="text-2xl font-semibold mb-4">{section.Name}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
                   {section.MenuItems.flatMap((product) => {

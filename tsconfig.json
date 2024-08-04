@@ -39,7 +39,7 @@
   "include": [
     "src",
     ".next/types/**/*.ts"
-, "app/pages/page.tsx", "components/lib"  ],
+, "src/app/pages/page.tsx", "src/components/lib"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

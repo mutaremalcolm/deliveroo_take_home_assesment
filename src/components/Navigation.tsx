@@ -6,6 +6,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { TfiYoutube } from "react-icons/tfi";
 import { IoBriefcase } from "react-icons/io5";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigation = [
   {
@@ -40,8 +41,8 @@ const navigation = [
   },
   {
     id: "5",
-    title: "Copyright M Mutare",
-    url: "https://www.instagram.com/malcolmfullstack/?igsh=cmdpdTRmdzN3eXh5",
+    title: "Project Source Code",
+    url: "https://github.com/mutaremalcolm/deliveroo_take_home_assesment/tree/main",
     mobile: false,
   },
 ];
@@ -55,19 +56,20 @@ const Navigation = () => {
       >
         <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
           <Link className="block w-[12rem] xl:mr-8" href="/">
-            <h1
-              className="font-code text-3xl uppercase text-n-1 text-white
-                    transition-colors hover:text-primary-foreground"
+            <Image
+              src={`/images/flipdish-logo.png`}
+              alt="logo"
+              width={170}
+              height={170}
             >
-              FlipDish
-            </h1>
+              
+            </Image>
           </Link>
           <nav
             className={`fixed top-[5rem] 
                 left-0 right-0 bottom-0 bg-card lg:static lg:flex lg:mx-auto lg:bg-transparent`}
           >
             <div className="relative z-2 flex flex-col items-center justify-around m-auto lg:flex-row">
-              {/* Add 'hidden lg:flex' to hide items on mobile and show on large screens */}
               {navigation.map((item) => (
                 <Link
                   key={item.id}
