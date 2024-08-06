@@ -1,22 +1,26 @@
-"use client";
+"use server";
 
 import "./globals.css";
 import Navigation from "../components/Navigation";
 import MenuCard from "../components/MenuCard";
-import { useApiDataFetch } from "../hooks/useApiDataFetch";
 import React from "react";
+import { Menu } from "../app/types/types"
 
-function App() {
-  const { menuData, loading, error } = useApiDataFetch();
-
-  if (loading) {
-    return <div>Loading...</div>;
+async function fetchMenuData() {
+  const response = await fetch(
+    `https://menus.flipdish.co/prod/16798/e6220da2-c34a-4ea2-bb51-a3e190fc5f08.json`,
+  );
+  if (!response.ok) {
+    throw new Error(`Network response was not ok (Status: ${response.status})`);
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  const menuData = await response.json();
+  return menuData;
+}
 
+
+export default async function App() {
+  const menuData: Menu = await fetchMenuData();
   return (
     <>
       <Navigation />
@@ -81,4 +85,3 @@ function App() {
   );
 }
 
-export default App;

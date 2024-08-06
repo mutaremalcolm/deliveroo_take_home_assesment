@@ -74,13 +74,10 @@ const Navigation = () => {
                 <Link
                   key={item.id}
                   href={item.url}
-                  className={`block relative font-code text-2xl uppercase 
+                  className={`relative font-code text-2xl uppercase 
                                 text-card-foreground transition-colors hover:text-secondary-foreground 
-                                px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                                  item.url === location.hash
-                                    ? "z-2 lg:text-primary-foreground"
-                                    : "lg:text-primary-foreground/50"
-                                } lg:hover:text-primary-foreground xl:px-12 hidden lg:block`}
+                                 px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold 
+                                 lg:hover:text-primary-foreground xl:px-12 hidden lg:block`}
                 >
                   {item.title}
                 </Link>
