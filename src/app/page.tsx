@@ -24,7 +24,7 @@ export default async function App() {
   return (
     <>
       <Navigation />
-      <div className="flex flex-col items-center mt-10 text-white font-bold text-lg" >
+      <div className="flex flex-col items-center text-white font-bold text-lg" >
         {/* <h1>TODAY'S MENU</h1> */}
       </div>
       <div className="p-4 mt-5">
