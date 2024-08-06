@@ -24,18 +24,15 @@ export default async function App() {
   return (
     <>
       <Navigation />
-      <div className="flex flex-col items-center text-white font-bold text-lg" >
-        {/* <h1>TODAY'S MENU</h1> */}
-      </div>
-      <div className="p-4 mt-5">
+      <main className="flex flex-col w-full my-2 gap-3 md:pr-2 md:px-4" >
         {menuData
           ? menuData.MenuSections.map((section) => (
-              <div
+              <section
+              className="text-card-foreground pb-4 md:px-48 md:container"
                 key={section.MenuSectionId}
-                className="mb-8 text-center text-white"
               >
                 <h2 className="text-2xl font-semibold mb-4">{section.Name}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3">
+                <div className="w-full">
                   {section.MenuItems.flatMap((product) => {
                     const {
                       Price,
@@ -77,10 +74,10 @@ export default async function App() {
                     );
                   })}
                 </div>
-              </div>
+              </section>
             ))
           : null}
-      </div>
+      </main>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
-import { FaHeart } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
+import { FaCirclePlus } from "react-icons/fa6";
 
 interface MenuItemCardProps {
   productKey: string;
@@ -17,42 +18,49 @@ const MenuCard: React.FC<MenuItemCardProps> = ({
   productPrice,
 }) => {
   return (
-    <div
-      className="flex flex-col rounded-xl border-1 bg-orange-300 h-full 
-      ease-in-out delay-150 hover:-translate-y-1 hover:scale-15 hover:bg-orange-300 
-      duration-300 relative"
+    <Link
+      href="/"
+      className="flex flex-row w-full justify-between max-h-36 min-h-[90px] py-4 pb-4 gap-2 md:gap-3 border-b cursor-pointer transition duration-300 hover:scale-105"
     >
-      <div className="p-4 flex-grow">
-        <h2 className="text-lg font-semibold text-white">{productName}</h2>
-        <p className="text-black thin">{productDescription}</p>
-        <div className="font-bold mt-4">
-          <span>R {productPrice.toFixed(2)}</span>
-        </div>
-      </div>
-      {productImageUrl ? (
-        <div className="relative w-full h-40">
-          <img
+      <div className="flex h-20 overflow-hidden pb-4">
+        {productImageUrl ? (
+          <Image
             src={productImageUrl}
             alt={productName}
-            className="w-full h-full rounded-b-xl object-cover"
+            width={100}
+            height={100}
+            className="rounded-2xl"
           />
-        </div>
-      ) : (
-        <div className="w-full h-40">
+        ) : (
           <Image
             src="/images/placeholder-image.svg"
             alt="placeholder image"
-            width={150}
-            height={150}
+            width={80}
+            height={100}
+            className="px-6"
           />
+        )}
+      </div>
+      <div className="flex flex-row w-full">
+        <div className="flex flex-col w-full grow items-start space-y-1.5">
+          <h3 className="font-medium line-clamp-2">{productName}</h3>
+          <p className="text-xs text-gray-600 text-start font-light w-4/5 line-clamp-3">
+            {productDescription}
+          </p>
         </div>
-      )}
-      <FaHeart
-        className="absolute top-2 right-2 text-red-500 z-10 pt-2
-      hover:text-red-400"
-        size={30}
-      />
-    </div>
+        <div className="flex-none h-full font-medium">
+          <div className="flex flex-col h-full w-full justify-between items-center text-sm">
+            <span>R {productPrice.toFixed(2)}</span>
+            <button>
+              <FaCirclePlus
+                className="bg-blue-900/30 rounded-full translate-x-3 -translate-y-2"
+                size={16}
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </Link>
   );
 };
 
