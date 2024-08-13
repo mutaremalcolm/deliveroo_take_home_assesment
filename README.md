@@ -9,7 +9,7 @@ This project makes a API call and displays the data for Flipdish restaurant menu
 <!-- DEMO IMAGE  -->
 <div align=center>
     <img src="/public/images/github.mobile.png" alt="Demo-Mobile" title="DemoImage-login" width="150" height="250">    
-    <img src="/public/images/github.desktop.png" alt="Demo-Desktop" title="DemoImage-home" width="400" height="250"> 
+    <img src="/public/images/github.desktop.png" alt="Demo-Desktop" title="DemoImage-home" width="400" height="350"> 
 </div>
 <br>
 
