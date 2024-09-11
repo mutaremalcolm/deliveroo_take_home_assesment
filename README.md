@@ -7,10 +7,10 @@
 This project makes a API call and displays the data for Flipdish restaurant menus. I spent approximately 5-6 hours to complete the project. It opted for NextJS to leverage Server Side Rendering, Tailwind CSS, React, and Vitest.
 
 <!-- DEMO IMAGE  -->
-<div align=center>
+<!-- <div align=center>
     <img src="/public/images/github.mobile.png" alt="Demo-Mobile" title="DemoImage-login" width="150" height="250">    
     <img src="/public/images/github.desktop.png" alt="Demo-Desktop" title="DemoImage-home" width="400" height="350"> 
-</div>
+</div> -->
 <br>
 
 <!-- -------------------------------------------------------------------------- -->
